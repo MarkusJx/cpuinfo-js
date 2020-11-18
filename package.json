@@ -1,0 +1,19 @@
+{
+  "name": "cpuinfo-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "npm run-script build",
+    "test": "node test.js",
+    "build": "cmake-js build -d src -O build",
+    "postbuild": "node install.js --postbuild",
+    "postinstall": "node install.js --postinstall"
+  },
+  "author": "MarkusJx",
+  "license": "MIT",
+  "devDependencies": {
+    "cmake-js": "^6.1.0",
+    "node-addon-api": "^3.0.2"
+  }
+}
