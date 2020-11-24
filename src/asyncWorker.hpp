@@ -5,8 +5,17 @@
 
 #include "cpuinfo/cpuinfo.h"
 
+/**
+ * Write to an object
+ * 
+ * @tparam T the data type. May only be std::string or bool
+ * @param env the napi environment to run in
+ * @param obj the object to write to
+ * @param key the key
+ * @param data the data to write. May be a string or bool
+ */
 template<class T>
-inline void ObjSet(const Napi::Env &env, Napi::Object &obj, const char *key, const T &data) {
+static void ObjSet(const Napi::Env &env, Napi::Object &obj, const char *key, const T &data) {
     static_assert(std::is_same_v<T, bool> || std::is_same_v<T, std::string>);
 
     if constexpr(std::is_same_v<T, std::string>) {

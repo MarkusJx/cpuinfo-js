@@ -197,10 +197,19 @@ export type cpuInfo = {
 };
 
 /**
- * Get information about the cpu used by this system.
+ * Get information about the cpu used by this system. Sync call.
  * Based on the work of Mystical: https://stackoverflow.com/a/7495023
  * See also: https://github.com/Mysticial/FeatureDetector
  * 
  * @returns the cpu information
  */
-export function getCpuInfo(): cpuInfo;
+export function getCpuInfoSync(): cpuInfo;
+
+/**
+ * Get information about the cpu used by this system. Async call.
+ * Based on the work of Mystical: https://stackoverflow.com/a/7495023
+ * See also: https://github.com/Mysticial/FeatureDetector
+ * 
+ * @returns the cpu information
+ */
+export async function getCpuInfo(): Promise<cpuInfo>;
