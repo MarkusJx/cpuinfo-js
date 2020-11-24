@@ -40,11 +40,24 @@ module.exports = {
      */
 
     /**
-     * Get information about the cpu used by this system
+     * Get information about the cpu used by this system. Sync call.
+     * Based on the work of Mystical: https://stackoverflow.com/a/7495023
+     * See also: https://github.com/Mysticial/FeatureDetector
      * 
      * @returns {cpuInfo} the cpu information
      */
-    "getCpuInfo": function() {
-        return cpuinfo_js_lib.lib_getCpuInfo();
+    getCpuInfoSync: function () {
+        return cpuinfo_js_lib.lib_getCpuInfoSync();
+    },
+
+    /**
+     * Get information about the cpu used by this system. Async call.
+     * Based on the work of Mystical: https://stackoverflow.com/a/7495023
+     * See also: https://github.com/Mysticial/FeatureDetector
+     * 
+     * @returns {cpuInfo} the cpu information
+     */
+    getCpuInfo: async function () {
+        return await cpuinfo_js_lib.lib_getCpuInfo();
     }
 };

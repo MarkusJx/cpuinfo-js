@@ -1,7 +1,11 @@
 {
   "name": "cpuinfo-js",
   "version": "1.0.0",
-  "description": "",
+  "description": "CPU information for javascript",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkusJx/cpuinfo-js.git"
+  },
   "main": "index.js",
   "scripts": {
     "pretest": "npm run-script build",

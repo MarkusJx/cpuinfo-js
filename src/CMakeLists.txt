@@ -10,7 +10,7 @@ add_compile_definitions(NAPI_CPP_EXCEPTIONS)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 set(CPUINFO_SRC cpuinfo/cpuinfo.c cpuinfo/cpuinfo.h)
-add_library(${PROJECT_NAME} SHARED main.cpp ${CPUINFO_SRC} ${CMAKE_JS_SRC})
+add_library(${PROJECT_NAME} SHARED cpuinfo_js.cpp asyncWorker.hpp asyncWorker.cpp ${CPUINFO_SRC} ${CMAKE_JS_SRC})
 
 # n-api stuff
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")

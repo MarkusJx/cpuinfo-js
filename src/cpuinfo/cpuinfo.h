@@ -4,6 +4,9 @@
 extern "C" {
 #endif //C++
 
+/**
+ * The CPU information struct
+ */
 typedef struct cpuInfo_s {
     char VENDOR[13];
 
@@ -47,6 +50,12 @@ typedef struct cpuInfo_s {
     bool HW_AVX512VBMI; //  AVX512 Vector Byte Manipulation Instructions
 } cpuInfo;
 
+/**
+ * Generate CPU info.
+ * 
+ * Based on the work of Mystical: https://stackoverflow.com/a/7495023
+ * See also: https://github.com/Mysticial/FeatureDetector
+ */
 cpuInfo generateCpuInfo();
 
 #ifdef __cplusplus
