@@ -82,5 +82,19 @@ cpuInfo generateCpuInfo() {
         cInfo.HW_XOP = (info[2] & ((int)1 << 11)) != 0;
     }
 
+    // Get the cpu brand string.
+    // Source: https://stackoverflow.com/a/850812
+    for (unsigned int i = 0x80000000; i <= nExIds; ++i) {
+        cpuid(info, i);
+        // Interpret CPU brand string
+        if  (i == 0x80000002) {
+            memcpy(cInfo.CPU_BRAND_STRING, info, sizeof(info));
+        } else if  (i == 0x80000003) {
+            memcpy(cInfo.CPU_BRAND_STRING + 16, info, sizeof(info));
+        } else if  (i == 0x80000004) {
+            memcpy(cInfo.CPU_BRAND_STRING + 32, info, sizeof(info));
+        }
+    }
+
     return cInfo;
 }

@@ -5,6 +5,7 @@ module.exports = {
      * The cpu info
      * @typedef {{
      * vendor: String
+     * cpuBrandString: String
      * mmx: Boolean
      * x64: Boolean
      * abm: Boolean
@@ -55,7 +56,7 @@ module.exports = {
      * Based on the work of Mystical: https://stackoverflow.com/a/7495023
      * See also: https://github.com/Mysticial/FeatureDetector
      * 
-     * @returns {cpuInfo} the cpu information
+     * @returns {Promise<cpuInfo>} the cpu information
      */
     getCpuInfo: async function () {
         return await cpuinfo_js_lib.lib_getCpuInfo();

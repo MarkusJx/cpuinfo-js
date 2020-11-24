@@ -11,6 +11,12 @@ export type cpuInfo = {
     vendor: string,
 
     /**
+     * The CPU brand string.
+     * E.g. 'Intel(R) Core(TM) ${MODEL} CPU @ ${FREQ}GHz'
+     */
+    cpuBrandString: string,
+
+    /**
      * Whether the cpu has MMX support.
      * @see https://en.wikipedia.org/wiki/MMX_(instruction_set)
      */

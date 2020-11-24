@@ -9,6 +9,7 @@ extern "C" {
  */
 typedef struct cpuInfo_s {
     char VENDOR[13];
+    char CPU_BRAND_STRING[0x40];
 
     //  Misc.
     bool HW_MMX;

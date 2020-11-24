@@ -5,6 +5,7 @@ Napi::Object cpuInfoToVal(const Napi::Env &env, const cpuInfo &info) {
     Napi::Object res = Napi::Object::New(env);
 
     OSet("vendor", std::string(info.VENDOR));
+    OSet("cpuBrandString", std::string(info.CPU_BRAND_STRING));
 
     OSet("mmx", info.HW_MMX);
     OSet("x64", info.HW_x64);
