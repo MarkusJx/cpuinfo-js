@@ -9,7 +9,7 @@ Napi::Object getCpuInfoSync(const Napi::CallbackInfo &cb_info) {
 }
 
 Napi::Promise getCpuInfo(const Napi::CallbackInfo &cb_info) {
-    return CpuInfoPromise::create(cb_info.Env(), [] {
+    return CpuInfoPromise::create(cb_info.Env(), [] {
         return generateCpuInfo();
     });
 }
