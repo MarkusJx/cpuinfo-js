@@ -1,0 +1,27 @@
+name: CMake
+
+on: [push]
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    strategy:
+      matrix: 
+        os: [ubuntu-latest, windows-latest, macOs-latest]
+
+    runs-on: ${{matrix.os}}
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install
+      run: npm install
+
+    - name: Build
+      run: npm run-script build
+
+    - name: Test
+      run: npm test
